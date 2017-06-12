@@ -19,12 +19,12 @@ $videos = $Fetch_Remote_Url->fru_get_json( 'https://www.googleapis.com/youtube/v
 
 <div class="dummy__block">
 	<?php if ( $videos ) :
-    foreach ( $videos["items"] as $video ) : 
-      //var_dump( $video["snippet"]["resourceId"]["videoId"] ); ?>
-      <a href="<?php echo esc_url( 'https://www.youtube.com/watch?v=' . $video["snippet"]["resourceId"]["videoId"] ); ?>" class="dummy__block-url">
-        <img src="<?php echo esc_url( $video["snippet"]["thumbnails"]["medium"]["url"] ); ?>" />
-      </a>
-    <?php endforeach;
-  endif; ?>
+		foreach ( $videos["items"] as $video ) : 
+			//var_dump( $video["snippet"]["resourceId"]["videoId"] ); ?>
+			<a href="<?php echo esc_url( 'https://www.youtube.com/watch?v=' .$video["snippet"]["resourceId"]["videoId"] ); ?>" class="dummy__block-url">
+				<img src="<?php echo esc_url( $video["snippet"]["thumbnails"]["medium"]["url"] ); ?>" />
+			</a>
+		<?php endforeach;
+	endif; ?>
 </div>
 ```
